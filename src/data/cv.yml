@@ -1,0 +1,183 @@
+# RenderCV YAML format — https://docs.rendercv.com/
+# Merged from: Academic CV.pdf (primary), EUROPASS.pdf, Sium's Professional CV.
+# Phone number, home address and referees are intentionally not published.
+
+cv:
+  name: Maskawat Al Sium
+  location: Beijing, China
+  email: maskawatalsium@bit.edu.cn
+  website: https://maskawatprime1.github.io
+  summary: MSc student in Aerospace Engineering at Beijing Institute of Technology working on electric propulsion — plasma diagnostics, hollow cathodes and ExB probes.
+  social_networks:
+    - network: LinkedIn
+      username: maskawat-al-sium
+    - network: GitHub
+      username: Maskawatprime1
+
+  sections:
+    education:
+      - institution: Beijing Institute of Technology
+        area: Aerospace Engineering
+        degree: MSc
+        location: Beijing, China
+        start_date: 2025-09
+        end_date: present
+        highlights:
+          - 'Research direction: electric propulsion'
+          - 'Chinese Government Scholarship (high-level postgraduate program)'
+
+      - institution: North China Electric Power University
+        area: Mechanical Engineering
+        degree: BSc
+        location: Beijing, China
+        start_date: 2021-09
+        end_date: 2025-06
+        highlights:
+          - 'Cumulative GPA 3.80 / 5.00; ranked in the top 10 % of the class every year'
+          - 'Thesis: Investigation of the Temperature and Discharge Characteristics of High-Current Hollow Cathode (supervisor: Dr. Zhang Hui)'
+
+    experience:
+      - company: Beijing Institute of Technology
+        position: Research Assistant — ExB probe for ion-velocity diagnostics
+        location: Beijing, China
+        start_date: 2025-09
+        end_date: present
+        highlights:
+          - 'Designed and prepared for manufacture a modular ExB probe (interchangeable collimators, drift tubes, filter electrodes, collector) with full SolidWorks drawings'
+          - 'Simulated electric/magnetic fields, ion trajectories and collector footprints in COMSOL to optimise geometry for ion-velocity selection'
+          - 'Defined the test protocol: 40–220 V plate-voltage sweep, magnetic-field mapping and sensitive collector-current measurement'
+
+      - company: North China Electric Power University (research conducted at Beijing Institute of Technology)
+        position: Undergraduate thesis research — 50 A LaB₆ hollow cathode
+        location: Beijing, China
+        start_date: 2024-01
+        end_date: 2025-06
+        highlights:
+          - 'Designed and fabricated a 50 A-class heater-less LaB₆ cathode (CNC, EDM) with embedded Type-C W-Re thermocouples'
+          - 'Measured 920–1,470 K (≈400 K gradient), negative-resistance voltage behaviour and a plume-to-spot transition at 30–35 A over 10–50 A and 5–20 sccm xenon'
+          - 'Validated a 0-D MATLAB plasma-thermal model against the data; it captured the trends but over-predicted temperature by about 18 % at 50 A'
+
+      - company: Beijing Renhe Huizhi Information Technology Co., Ltd.
+        position: Scholarly Content Analyst
+        location: Beijing, China
+        start_date: 2025-12
+        end_date: 2026-09
+        highlights:
+          - 'Annotated engineering research papers using the CoreSC, AZ-II and CiTO frameworks to structure scientific content and citation relationships'
+          - 'Tested a scholarly annotation platform, documented usability issues and worked with developers and researchers on workflow improvements'
+
+      - company: Customer Umbrella
+        position: Customer Consultancy
+        location: Varna, Bulgaria
+        start_date: 2022-09
+        end_date: 2023-04
+
+      - company: Matrix Academic and Admission Coaching Center
+        position: Instructor / Chemistry Mentor
+        location: Ghoraghat, Bangladesh
+        start_date: 2021-08
+        end_date: 2023-03
+
+      - company: Ghoraghat KC Pilot School and College
+        position: Physics Instructor (short-term)
+        location: Ghoraghat, Bangladesh
+        start_date: 2021-10
+        end_date: 2022-09
+
+      - company: NCEPU International Students' Union
+        position: Operation and Event Planner; volunteer for incoming international students
+        location: Beijing, China
+        start_date: 2023-12
+        end_date: 2025-06
+        highlights:
+          - 'Organised workshops, seminars and social events, and supported orientation of new international students'
+
+      - company: Bangladesh–China Youth Student Association (BCYSA)
+        position: Campus Ambassador
+        location: Beijing, China
+        start_date: 2024-03
+        end_date: 2026-10
+        highlights:
+          - 'Coordinated cultural-exchange events and managed communication with members and external partners'
+
+      - company: North China Electric Power University
+        position: Alumni Liaison, Class of 2026
+        location: Beijing, China
+        start_date: 2025
+        end_date: 2026
+
+    publications:
+      - title: 'Comprehensive Analysis of Cesium Silver Bismuth Bromide Perovskite Solar Cells: Enhancing Performance through Optimization and Modeling'
+        authors:
+          - M. Z. Arif
+          - A. Biswas
+          - J. Miah
+          - K. Asif
+          - N. Kumar Chowdhury
+          - M. Al Sium
+          - A. Das Shuvro
+        doi: 10.1002/pssa.202500159
+        date: 2025
+        journal: physica status solidi (a), 222(16), 2500159
+
+      - title: 'Advanced Modular Machine Tools: A Comprehensive Approach to High-Performance Boring Machine Design'
+        authors:
+          - J. Miah
+          - M. M. R. Milon
+          - M. A. S. Prodhan
+          - M. Al Sium
+        doi: 10.5281/zenodo.13250598
+        date: 2024
+        journal: North American Academic Research, 7(7)
+
+    awards:
+      - name: Chinese Government Scholarship (CSC) — high-level postgraduate program
+        date: '2025'
+        issuer: China Scholarship Council
+        highlights:
+          - 'For MSc study in Aerospace Engineering at Beijing Institute of Technology'
+
+      - name: Outstanding Graduate Award in Mechanical Engineering
+        date: '2025'
+        issuer: North China Electric Power University
+        highlights:
+          - 'For ranking at the top of the class with excellent academic results and overall achievements'
+
+      - name: Certificate of Appreciation
+        date: '2024'
+        issuer: International Education Institute, NCEPU
+        highlights:
+          - "For organising activities in the Academic Department of the International Students' Union (Dec 2023 – Jul 2024)"
+
+      - name: Beijing Government Excellence Students Award
+        date: '2021–2025'
+        issuer: Beijing Municipal Government
+
+      - name: Beijing Government Scholarship
+        date: '2021'
+        issuer: Beijing Municipal Government
+
+      - name: Competitor, Inter-School Physics Competition
+        date: '2022'
+
+      - name: Scout Award
+
+    skills:
+      - label: Modelling & simulation
+        details: MATLAB, COMSOL Multiphysics, 0-D plasma/thermal modelling, NASA OpenVSP (geometry & mass properties), experimental data analysis
+      - label: CAD & drawings
+        details: SolidWorks, AutoCAD, Autodesk Inventor, Autodesk Fusion 360 — part/assembly modelling and engineering drawings
+      - label: Experimental
+        details: Vacuum testing, Type-C thermocouple instrumentation, CNC/EDM part fabrication
+      - label: Programming & tools
+        details: Python (basic), Arduino (C), MySQL / SQL data extraction, n8n workflow automation, LaTeX
+      - label: Documentation
+        details: Technical reports and presentations, Microsoft Office, Adobe Photoshop and Illustrator, Notion
+      - label: Languages
+        details: Bengali (native), English (fluent, C1–C2), Chinese (HSK Level 3), Hindi (spoken)
+
+    interests:
+      - label: Astronomy
+        details: Member, NCEPU Astronomy Club
+      - label: Community
+        details: Scouting; community service in China and Bangladesh

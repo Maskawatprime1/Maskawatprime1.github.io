@@ -1,0 +1,184 @@
+---
+import { site } from '@config/site';
+import Page from '@layouts/Page.astro';
+import { withBase } from '@utils/base';
+import { getCollection } from 'astro:content';
+
+const entries = (await getCollection('projects', (p) => p.data.category === 'research')).sort(
+  (a, b) => (a.data.importance ?? 999) - (b.data.importance ?? 999),
+);
+---
+
+<Page title="Research" description={`Research by ${site.author.name}`}>
+  <div class="post">
+    <header class="post-header">
+      <h1 class="post-title">research</h1>
+      <p class="post-description">{site.pages.research.description}</p>
+    </header>
+
+    <article>
+      {
+        entries.length === 0 ? (
+          <p style="color: var(--global-text-color-light);">No research entries yet.</p>
+        ) : (
+          <ol class="research-list">
+            {entries.map((entry, i) => {
+              const href = withBase(`/projects/${entry.id}/`);
+              const { title, description, img, img_alt, period, affiliation, methods, status } =
+                entry.data;
+              return (
+                <li class="research-item">
+                  {img && (
+                    <a href={href} class="research-thumb" tabindex="-1" aria-hidden="true">
+                      <img src={withBase(img)} alt={img_alt ?? title} loading="lazy" />
+                    </a>
+                  )}
+                  <div class="research-body">
+                    <p class="research-code">R/{String(i + 1).padStart(2, '0')}</p>
+                    <h2 class="research-title">
+                      <a href={href}>{title}</a>
+                    </h2>
+                    {(period || affiliation) && (
+                      <p class="research-where">
+                        {affiliation}
+                        {affiliation && period ? ' · ' : ''}
+                        {period}
+                      </p>
+                    )}
+                    {description && <p class="research-desc">{description}</p>}
+                    {methods && methods.length > 0 && (
+                      <p class="research-methods">
+                        {methods.map((m) => (
+                          <span class="meta-tag">{m}</span>
+                        ))}
+                      </p>
+                    )}
+                    {status && <p class="research-status">{status}</p>}
+                    <a href={href} class="research-more">
+                      Read more &rarr;
+                    </a>
+                  </div>
+                </li>
+              );
+            })}
+          </ol>
+        )
+      }
+    </article>
+  </div>
+</Page>
+
+<style>
+  .post {
+    padding-top: 0;
+  }
+
+  .post-description {
+    color: var(--global-text-color-light);
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .research-list {
+    list-style: none;
+    margin: 1.5rem 0 0;
+    padding: 0;
+  }
+
+  .research-item {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--global-divider-color);
+  }
+
+  .research-item:last-child {
+    border-bottom: 1px solid var(--global-divider-color);
+  }
+
+  .research-thumb img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 3px;
+    border: 1px solid var(--global-divider-color);
+    display: block;
+  }
+
+  .research-body > * {
+    margin: 0;
+  }
+
+  .research-code {
+    font-family: var(--font-mono, monospace);
+    font-size: 0.75rem;
+    color: var(--global-text-color-light);
+    letter-spacing: 0.05em;
+  }
+
+  .research-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 0.2rem;
+    line-height: 1.35;
+  }
+
+  .research-title a {
+    color: var(--global-text-color);
+    text-decoration: none;
+  }
+
+  .research-title a:hover {
+    color: var(--global-theme-color);
+  }
+
+  .research-where {
+    font-size: 0.85rem;
+    color: var(--global-text-color-light);
+    margin-top: 0.25rem;
+  }
+
+  .research-desc {
+    font-size: 0.95rem;
+    margin-top: 0.6rem;
+    color: var(--global-text-color);
+  }
+
+  .research-methods {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.7rem;
+  }
+
+  .meta-tag {
+    font-size: 0.75rem;
+    padding: 0.05rem 0.5rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 3px;
+    color: var(--global-text-color);
+  }
+
+  .research-status {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--global-text-color-light);
+    margin-top: 0.6rem;
+  }
+
+  .research-more {
+    display: inline-block;
+    margin-top: 0.7rem;
+    font-size: 0.85rem;
+    color: var(--global-theme-color);
+    text-decoration: none;
+  }
+
+  @media (max-width: 640px) {
+    .research-item {
+      grid-template-columns: 1fr;
+      gap: 0.9rem;
+    }
+  }
+</style>
